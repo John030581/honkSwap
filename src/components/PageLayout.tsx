@@ -131,9 +131,10 @@ export default function PageLayout(props: {
         // always occupy scrollbar space
         className="flex flex-col PageLayoutContent relative grid-area-c mobile:rounded-none"
         style={{
+          backgroundImage: 'url(/backgroundImages/HomeHeroBackground.jpg)',
           overflowX: 'hidden',
           overflowY: 'scroll',
-          background: 'linear-gradient(139.73deg,#193357,#000 98%)'
+          // background: 'linear-gradient(139.73deg,#193357,#000 98%)'
         }}
       >
         {props.contentBanner}
@@ -445,10 +446,10 @@ function Navbar({
       </Link>
       <Row className='w-full items-start justify-start ml-4'>
         <LinkItem href="/swap" isCurrentRoutePath={pathname === '/swap'}>Swap</LinkItem>
-        <LinkItem href="/farms" isCurrentRoutePath={pathname === '/farms'}>Farms</LinkItem>
+        {/* <LinkItem href="/farms" isCurrentRoutePath={pathname === '/farms'}>Farms</LinkItem>
         <LinkItem href="/lending" isCurrentRoutePath={pathname === '/lending'}>Lending</LinkItem>
         <LinkItem href="/nft-staking" isCurrentRoutePath={pathname === '/nft-staking'}>NFT Staking</LinkItem>
-        <LinkItem href="/bridge" isCurrentRoutePath={pathname === '/bridge'}>Bridge</LinkItem>
+        <LinkItem href="/bridge" isCurrentRoutePath={pathname === '/bridge'}>Bridge</LinkItem> */}
       </Row>
 
       <Row className="gap-6 items-center mobile:hidden">
@@ -628,7 +629,7 @@ function SideMenu({ className, onClickCloseBtn }: { className?: string; onClickC
             <LinkItem icon="/icons/entry-icon-swap.svg" href="/swap" isCurrentRoutePath={pathname === '/swap'}>
               Swap
             </LinkItem>
-            <LinkItem icon="/icons/entry-icon-farms.svg" href="/farms" isCurrentRoutePath={pathname === '/farms'}>
+            {/* <LinkItem icon="/icons/entry-icon-farms.svg" href="/farms" isCurrentRoutePath={pathname === '/farms'}>
               Farms
             </LinkItem>
             <LinkItem
@@ -644,7 +645,7 @@ function SideMenu({ className, onClickCloseBtn }: { className?: string; onClickC
             </LinkItem>
             <LinkItem icon="/icons/entry-icon-acceleraytor.svg" href="/bridge">
               Bridge
-            </LinkItem>
+            </LinkItem> */}
           </div>
 
           <Col className="overflow-scroll no-native-scrollbar">
@@ -658,15 +659,15 @@ function SideMenu({ className, onClickCloseBtn }: { className?: string; onClickC
                 Docs
               </OptionItem>
 
-              <OptionItem noArrow href="https://twitter.com/BrrrChain" iconSrc="/icons/media-twitter.svg">
+              <OptionItem noArrow href="https://x.com/honkcto?s=21" iconSrc="/icons/media-twitter.svg">
                 Twitter
               </OptionItem>
-              <OptionItem noArrow href="https://t.me/BrrrChainGateway" iconSrc="/icons/media-telegram.svg">
+              <OptionItem noArrow href="https://t.me/CTOhonk" iconSrc="/icons/media-telegram.svg">
                 Telegram
               </OptionItem>
-              <OptionItem noArrow href="https://discord.gg/GRweAYa3bC" iconSrc="/icons/media-discord.svg">
+              {/* <OptionItem noArrow href="https://discord.gg/GRweAYa3bC" iconSrc="/icons/media-discord.svg">
                 Discord
-              </OptionItem>
+              </OptionItem> */}
 
               {/* <OptionItem noArrow href="https://forms.gle/DvUS4YknduBgu2D7A" iconSrc="/icons/misc-feedback.svg">
                 Feedback

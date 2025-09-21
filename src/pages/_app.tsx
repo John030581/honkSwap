@@ -46,7 +46,7 @@ import WalletSelectorDialog from '@/pageComponents/dialogs/WalletSelectorDialog'
 import { setAutoFreeze } from 'immer'
 
 import '../styles/index.css'
-import useStakingLoad from '@/application/staking/useStakingLoad'
+// import useStakingLoad from '@/application/staking/useStakingLoad'
 
 setAutoFreeze(false)
 export default function MyApp({ Component, pageProps }: AppProps) {
@@ -163,12 +163,12 @@ function ApplicationsInitializations() {
   // useCLMMMigrationLoadInfo()
 
   /********************** farm **********************/
-  useFarmInfoLoader()
+  // useFarmInfoLoader()
 
   /********************** staking **********************/
   // useStealDataFromFarm() // auto inject apr to farm info from backend pair interface
-  useStakingInitializer()
-  useStakingLoad()
+  // useStakingInitializer()
+  // useStakingLoad()
 
   /********************** txHistory **********************/
   // useInitRefreshTransactionStatus()

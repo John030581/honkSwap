@@ -338,8 +338,8 @@ export default function CoinInputBox({
           <>
             <Row
               className={`items-center gap-1.5 ${(showTokenSelectIcon && !disabledTokenSelect) || canSwitchSOLWSOL
-                  ? 'clickable clickable-mask-offset-2'
-                  : ''
+                ? 'clickable clickable-mask-offset-2'
+                : ''
                 }`}
               onClick={(ev) => {
                 ev.stopPropagation()

@@ -3,10 +3,12 @@ import useConnection from "../connection/useConnection";
 import { PublicKey } from "@solana/web3.js";
 import { LIQUIDITY_STATE_LAYOUT_V4 } from "@raydium-io/raydium-sdk";
 
-export const GET_PRICE_ENDPOINT = "https://price.jup.ag/v4/price?ids="
+// export const GET_PRICE_ENDPOINT = "https://price.jup.ag/v4/price?ids="
+export const GET_PRICE_ENDPOINT = "https://lite-api.jup.ag/price/v2?ids="
 
 export async function getTokenPrice(mintString: string) {
   const result = await jFetch(GET_PRICE_ENDPOINT + mintString)
+
   return result.data[mintString]
 }
 

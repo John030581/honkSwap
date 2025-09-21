@@ -77,8 +77,8 @@ export function parseBalanceFromTokenAccount({
   // !it is in BN
   const allWsolBalance = allTokenAccounts.some((t) => isMintEqual(t.mint, WSOLMint))
     ? toBN(
-        allTokenAccounts.reduce((acc, t) => (isMintEqual(t.mint, WSOLMint) ? add(acc, t.amount) : acc), 0 as Numberish)
-      )
+      allTokenAccounts.reduce((acc, t) => (isMintEqual(t.mint, WSOLMint) ? add(acc, t.amount) : acc), 0 as Numberish)
+    )
     : undefined
 
   // use TokenAmount (no QuantumSOL)

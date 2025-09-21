@@ -14,7 +14,7 @@ import useConnection, { SESSION_STORAGE_USER_SELECTED_RPC } from './useConnectio
 import useAppAdvancedSettings from '../common/useAppAdvancedSettings'
 
 const mockRPCConfig: Omit<Config, 'success'> = {
-  rpcs: [{ name: "mainnet", url: "https://rpc.shyft.to?api_key=6AxjTcU7XcMmWh9s" }],
+  rpcs: [{ name: "mainnet", url: "https://mainnet.helius-rpc.com/?api-key=1ae02af9-8095-49d4-a455-1a2e73b2ca1c" }],
   devrpcs: [{ name: 'devnet', url: 'https://api.devnet.solana.com/', net: 'devnet' }],
   strategy: 'speed'
 }

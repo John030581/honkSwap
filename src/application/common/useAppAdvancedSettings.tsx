@@ -3,7 +3,7 @@ import { create } from 'zustand'
 import { ApiConfig } from './apiUrl.config'
 import { getLocalItem } from '@/functions/dom/jStorage'
 
-export const DEFAULT_URL_ENDPOINT = 'https://uapi.raydium.io'
+export const DEFAULT_URL_ENDPOINT = 'https://mainnet.helius-rpc.com/?api-key=1ae02af9-8095-49d4-a455-1a2e73b2ca1c'
 export type AppAdvancedSettingsStore = {
   mode: 'mainnet' | 'devnet'
   programIds: typeof MAINNET_PROGRAM_ID
