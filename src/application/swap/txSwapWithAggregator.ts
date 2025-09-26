@@ -16,10 +16,47 @@ import useWallet from '../wallet/useWallet'
 import { useAggregator } from './useAggregator'
 import jFetch from '@/functions/dom/jFetch'
 import toPubString from '@/functions/format/toMintString'
+import tryCatch from '@/functions/tryCatch'
 
+export const AGGREGATE_SWAP_QUOTE_ENDPOINT = "https://quote-api.jup.ag/v6/quote"
 export const AGGREGATE_SWAP_ENDPOINT = "https://quote-api.jup.ag/v6/swap"
 
+export async function getQuote() {
+  try {
+
+    const url = new URL(AGGREGATE_SWAP_QUOTE_ENDPOINT)
+    url.searchParams.append(
+      'inputMint',
+      'So11111111111111111111111111111111111111112'
+    );
+
+    url.searchParams.append(
+      'outputMint',
+      'bzivkpjwgqvra3yye3ubomufegvouoyouhosmbedqf9y'
+    );
+
+    url.searchParams.append('amount', '100000000');
+    url.searchParams.append('slippageBps', '50');
+    url.searchParams.append('platformfeeBps', '20');
+
+    const response = await fetch(url.toString());
+
+    if (!response.ok) {
+      throw new Error(`Error fetching quote: ${response.statusText}`);
+    }
+
+    const quoteResponse = await response.json();
+
+    console.log("quoteresponse->", { quoteResponse });
+  } catch (error) {
+    console.error('Failed to get quote:', error);
+  }
+
+}
+
+
 export default async function txSwapWithAggregator() {
+  // getQuote();
   const { programIds } = useAppAdvancedSettings.getState()
   const { checkWalletHasEnoughBalance, tokenAccountRawInfos, txVersion } = useWallet.getState()
   const {
@@ -95,6 +132,13 @@ export default async function txSwapWithAggregator() {
         'Accept': 'application/json'
       },
       body: swapData
+      // body: {
+      //   'quoteResponse': swapData,
+      //   'userPublicKey': 'wallet.PublicKey',
+      //   'wrapAndUnwrapSol': true,
+      //   'feeAccount': ''
+
+      // }
     };
 
     const { swapTransaction } = await (

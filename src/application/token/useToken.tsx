@@ -26,7 +26,7 @@ import {
 } from './quantumSOL'
 import { LpToken, SplToken, TokenJson } from './type'
 import { createSplToken } from './useTokenListsLoader'
-import { BRRRMint, SOLMint } from './wellknownToken.config'
+import { HonkMint, SOLMint } from './wellknownToken.config'
 
 export type TokenStore = {
   tokenIconSrcs: Record<HexAddress, SrcAddress>
@@ -178,8 +178,8 @@ export const useToken = create<TokenStore>((set, get) => ({
     const customizedToken = get().userAddedTokens[toPubString(mint)]
     const token = apiToken ?? customizedToken
 
-    if (token && toPubString(mint) === "GBQU1yUtG9MARyzsZr9v46bWu58HLCAeRsWSr3zayBzB") {
-      token.symbol = "BRRR"
+    if (token && toPubString(mint) === "3ag1Mj9AKz9FAkCQ6gAEhpLSX8B2pUbPdkb9iBsDLZNB") {
+      token.symbol = "Honk"
       token.icon = "/logo/logo.png"
     }
 
@@ -195,8 +195,8 @@ export const useToken = create<TokenStore>((set, get) => ({
     mintlike === SOLUrlMint
       ? QuantumSOLVersionSOL
       : mintlike === String(WSOLMint)
-      ? QuantumSOLVersionWSOL
-      : get().tokens[mintlike] || get().getToken(mintlike),
+        ? QuantumSOLVersionWSOL
+        : get().tokens[mintlike] || get().getToken(mintlike),
 
   toRealSymbol: (token: SplToken | undefined) =>
     isQuantumSOL(token) ? (isQuantumSOLVersionWSOL(token) ? 'WSOL' : 'SOL') : token?.symbol ?? '',
@@ -264,7 +264,7 @@ export const useToken = create<TokenStore>((set, get) => ({
 
   sortTokensWithBalance(tokens: SplToken[], useInputTokensOnly?: boolean) {
     const { getToken } = get()
-    const RAY = getToken(BRRRMint)
+    const RAY = getToken(HonkMint)
 
     const whiteList = shakeUndifindedItem([RAY, QuantumSOLVersionSOL])
     // noQuantumSOL
@@ -278,25 +278,25 @@ export const useToken = create<TokenStore>((set, get) => ({
 
     const result = useInputTokensOnly
       ? tokens.sort((tokenA, tokenB) => {
-          const balanceA =
-            (isQuantumSOL(tokenA) ? balances[toPubString(WSOLMint)]?.raw : pureBalances[tokenA.mintString]?.raw) ||
-            new TokenAmount(tokenA, 0).raw
-          const balanceB =
-            (isQuantumSOL(tokenB) ? balances[toPubString(WSOLMint)]?.raw : pureBalances[tokenB.mintString]?.raw) ||
-            new TokenAmount(tokenB, 0).raw
-          return balanceA.lte(balanceB) ? 1 : -1
-        })
+        const balanceA =
+          (isQuantumSOL(tokenA) ? balances[toPubString(WSOLMint)]?.raw : pureBalances[tokenA.mintString]?.raw) ||
+          new TokenAmount(tokenA, 0).raw
+        const balanceB =
+          (isQuantumSOL(tokenB) ? balances[toPubString(WSOLMint)]?.raw : pureBalances[tokenB.mintString]?.raw) ||
+          new TokenAmount(tokenB, 0).raw
+        return balanceA.lte(balanceB) ? 1 : -1
+      })
       : [
-          ...whiteList,
-          ...notInWhiteListToken
-            .filter((token) => pureBalances[token.mintString])
-            .sort((tokenA, tokenB) => {
-              const balanceA = pureBalances[tokenA.mintString].raw
-              const balanceB = pureBalances[tokenB.mintString].raw
-              return balanceA.lte(balanceB) ? 1 : -1
-            }),
-          ...notInWhiteListToken.filter((token) => !pureBalances[token.mintString])
-        ]
+        ...whiteList,
+        ...notInWhiteListToken
+          .filter((token) => pureBalances[token.mintString])
+          .sort((tokenA, tokenB) => {
+            const balanceA = pureBalances[tokenA.mintString].raw
+            const balanceB = pureBalances[tokenB.mintString].raw
+            return balanceA.lte(balanceB) ? 1 : -1
+          }),
+        ...notInWhiteListToken.filter((token) => !pureBalances[token.mintString])
+      ]
     return result
   },
 

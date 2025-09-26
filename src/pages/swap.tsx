@@ -561,7 +561,7 @@ function SwapCard() {
       </Button>
       {/* alert user if sol is not much */}
       <RemainSOLAlert />
-      {/** coin selector panel */}
+      {/* * coin selector panel */}
       <TokenSelectorDialog
         open={isCoinSelectorOn}
         onSelectToken={(token) => {
