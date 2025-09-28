@@ -36,6 +36,7 @@ export type WalletStore = {
   connecting: boolean
   select(walletName: WalletName): void
   signAllTransactions: <T extends Transaction | VersionedTransaction>(transactions: T[]) => Promise<T[]> // if not connected, return empty array
+  signTransaction?(transaction: VersionedTransaction): Promise<VersionedTransaction> // if not connected, return empty array
   disconnect(): Promise<unknown>
   signMessage?: (message: Uint8Array) => Promise<Uint8Array>
   /** only for Dev */
@@ -122,6 +123,7 @@ const useWallet = create<WalletStore>((set, get) => ({
   userDisconnect: false,
   select: () => { },
   signAllTransactions: () => Promise.resolve([]),
+  signTransaction: (transaction: VersionedTransaction) => Promise.resolve(transaction),
   disconnect: () => Promise.resolve(),
   /** only for Dev */
   inSimulateMode: false,

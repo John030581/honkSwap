@@ -23,7 +23,8 @@ const verifyWhiteList = [
   { mint: 'AhhdRu5YZdjVkKR3wbnUDaymVQL2ucjMQ63sZ3LFHsch', decimals: 9, is2022Token: false },
   { mint: 'C4Kkr9NZU3VbyedcgutU6LKmi6MKz81sx6gRmk5pX519', decimals: 9, is2022Token: false },
   { mint: '9TPL8droGJ7jThsq4momaoz6uhTcvX2SeMqipoPmNa8R', decimals: 9, is2022Token: false },
-  { mint: 'GBQU1yUtG9MARyzsZr9v46bWu58HLCAeRsWSr3zayBzB', decimals: 9, is2022Token: true }
+  { mint: 'GBQU1yUtG9MARyzsZr9v46bWu58HLCAeRsWSr3zayBzB', decimals: 9, is2022Token: true },
+  // { mint: '3ag1Mj9AKz9FAkCQ6gAEhpLSX8B2pUbPdkb9iBsDLZNB', decimals: 9, is2022Token: false }
 ]
 
 export async function verifyToken(

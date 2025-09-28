@@ -156,6 +156,7 @@ function SimulateWallet({ onClick }: { onClick?(): void }) {
 export default function WalletSelectorDialog() {
   const isWalletSelectorShown = useAppSettings((s) => s.isWalletSelectorShown)
   const { availableWallets } = useWallet()
+  console.log("debug->isWalletSelectorShown", isWalletSelectorShown, availableWallets)
   return (
     <ResponsiveDialogDrawer
       placement="from-top"
@@ -192,7 +193,7 @@ function PanelContent({
       size="lg"
     >
       <Row className="items-center justify-between p-8 mobile:p-4">
-        <div className="text-xl mobile:text-lg font-semibold text-white">Connect your wallet to BrrrChain</div>
+        <div className="text-xl mobile:text-lg font-semibold text-white">Connect your wallet to HonkSwap</div>
         <Icon className="text-[#ABC4FF] cursor-pointer" heroIconName="x" onClick={close} />
       </Row>
 
@@ -272,7 +273,7 @@ function PanelContent({
       <div className="py-4 text-white text-center font-medium text-sm border-t-1.5 border-[rgba(171,196,255,0.2)]">
         New here?{' '}
         <Link href="#" className="text-[#abc4ff]">
-          Get started on BrrrChain!
+          Get started on HonkSwap!
         </Link>
       </div>
     </Card>

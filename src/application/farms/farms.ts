@@ -3,9 +3,9 @@ export const farms = [
     id: 1,
     symbol: "Brrr/SOL",
     lpAddress: "4L2QBE2BZ6qtkGmxvWxEVTSKTY4vmqv4iwV4bBo5M8RM",
-    token0: "GBQU1yUtG9MARyzsZr9v46bWu58HLCAeRsWSr3zayBzB",
+    token0: "3ag1Mj9AKz9FAkCQ6gAEhpLSX8B2pUbPdkb9iBsDLZNB",
     token1: "So11111111111111111111111111111111111111112",
-    extUrl: "https://v1.orca.so/liquidity/browse?tokenMint=GBQU1yUtG9MARyzsZr9v46bWu58HLCAeRsWSr3zayBzB",
+    extUrl: "https://v1.orca.so/liquidity/browse?tokenMint=3ag1Mj9AKz9FAkCQ6gAEhpLSX8B2pUbPdkb9iBsDLZNB",
     apy: "0",
     poolType: "orca"
   },
