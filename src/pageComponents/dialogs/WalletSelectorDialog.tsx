@@ -156,7 +156,6 @@ function SimulateWallet({ onClick }: { onClick?(): void }) {
 export default function WalletSelectorDialog() {
   const isWalletSelectorShown = useAppSettings((s) => s.isWalletSelectorShown)
   const { availableWallets } = useWallet()
-  console.log("debug->isWalletSelectorShown", isWalletSelectorShown, availableWallets)
   return (
     <ResponsiveDialogDrawer
       placement="from-top"
