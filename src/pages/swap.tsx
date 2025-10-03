@@ -1211,20 +1211,22 @@ function KLineChart() {
     [availableLength]
   )
   return (
-    <Card
-      className={`flex ${isLine1BoxReady || isLine2BoxReady ? 'visible' : 'invisible'
-        } flex-col mt-10 p-2 w-[min(456px,100%)] self-center bg-cyberpunk-card-bg`}
-      size="lg"
-    >
-      <div ref={kline1Box}>
-        <KLineChartItem coin={coin1} onDataChange={(isReady) => setIsLine1BoxReady(isReady)} />
-      </div>
-      <div ref={kline2Box}>
-        {coin2?.mintString !== coin1?.mintString && (
-          <KLineChartItem coin={coin2} onDataChange={(isReady) => setIsLine2BoxReady(isReady)} />
-        )}
-      </div>
-    </Card>
+    <div className="flex justify-center w-full mt-10">
+      <Card
+        className={`flex ${isLine1BoxReady || isLine2BoxReady ? 'visible' : 'invisible'
+          } flex-col p-2 w-[min(912px,100%)] ${isLine1BoxReady || isLine2BoxReady ? '' : ''} mobile:w-[min(456px,100%)] mobile:self-center bg-cyberpunk-card-bg`}
+        size="lg"
+      >
+        <div ref={kline1Box}>
+          <KLineChartItem coin={coin1} onDataChange={(isReady) => setIsLine1BoxReady(isReady)} />
+        </div>
+        <div ref={kline2Box}>
+          {coin2?.mintString !== coin1?.mintString && (
+            <KLineChartItem coin={coin2} onDataChange={(isReady) => setIsLine2BoxReady(isReady)} />
+          )}
+        </div>
+      </Card>
+    </div>
   )
 }
 

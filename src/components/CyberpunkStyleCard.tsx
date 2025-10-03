@@ -31,8 +31,13 @@ export default function CyberpunkStyleCard({
       ref={domRef as any}
       className={wrapperClassName}
       style={{
-        //@ts-expect-error css variable
-        ['--gradient-rotate']: cssGradientRotate != null ? `${cssGradientRotate}deg` : undefined,
+
+        position: 'relative',
+        left: isMobile ? undefined : '-225px',
+        display: isMobile ? 'flex' : undefined,
+        justifyContent: isMobile ? 'center' : undefined,
+        alignItems: isMobile ? 'center' : undefined,
+        ...(cssGradientRotate != null ? { ['--gradient-rotate' as any]: `${cssGradientRotate}deg` } : {}),
         minHeight: haveMinHeight ? '300px' : undefined, // or style will be freak
         borderRadius: borderRoundSize,
         padding: cyberpunkBoarderWidth,
@@ -45,7 +50,7 @@ export default function CyberpunkStyleCard({
         className={twMerge('bg-cyberpunk-card-bg overflow-hidden', restProps.className)}
         style={{
           height: '100%',
-          width: '100%'
+          width: isMobile ? '100%' : '200%'
         }}
       >
         {children}

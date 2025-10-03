@@ -22,7 +22,7 @@
   }
 }
 .bg-cyberpunk-card-bg {
-  background-image: linear-gradient(140.14deg,rgba(0,182,191,.15),rgba(27,22,89,.1) 86.61%),linear-gradient(321.82deg,#000d21,#1b1659);
+  background-image: linear-gradient(140.14deg,rgba(0,182,191,.15),rgba(27,22,89,.1) 86.61%),linear-gradient(321.82deg,#2828d4,#0f0fbf);
 }
 .primary-gradient-bg {
   background: linear-gradient(139.73deg, hsl(185deg, 100%, 95%), hsl(255deg, 100%, 97%));

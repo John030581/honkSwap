@@ -494,7 +494,13 @@ function Navbar({
     </Grid>
   )
   return (
-    <nav className={twMerge('select-none text-white px-12 py-2 mobile:p-0 transition-all', className)} style={style}>
+    <nav
+      className={twMerge(
+        'select-none text-white px-12 py-2 mobile:p-0 transition-all',
+        className
+      )}
+      style={{ backgroundColor: '#2828d4', ...style }}
+    >
       {isMobile ? mobileNavContent : pcNavContent}
     </nav>
   )
@@ -605,9 +611,7 @@ function SideMenu({ className, onClickCloseBtn }: { className?: string; onClickC
           className
         )}
         style={{
-          background: isMobile
-            ? 'linear-gradient(242.18deg, rgba(57, 208, 216, 0.08) 68.05%, rgba(57, 208, 216, 0.02) 86.71%), #0C0926'
-            : undefined,
+          background: "#2828d4",
           boxShadow: isMobile ? '8px 0px 48px rgba(171, 196, 255, 0.12)' : undefined
         }}
       >
@@ -630,22 +634,22 @@ function SideMenu({ className, onClickCloseBtn }: { className?: string; onClickC
               Swap
             </LinkItem>
             {/* <LinkItem icon="/icons/entry-icon-farms.svg" href="/farms" isCurrentRoutePath={pathname === '/farms'}>
-              Farms
-            </LinkItem>
-            <LinkItem
-              icon="/icons/entry-icon-liquidity.svg"
-              href="/lending"
-              isCurrentRoutePath={pathname === '/lending'}
-            >
-              Lending
-            </LinkItem>
+          Farms
+        </LinkItem>
+        <LinkItem
+          icon="/icons/entry-icon-liquidity.svg"
+          href="/lending"
+          isCurrentRoutePath={pathname === '/lending'}
+        >
+          Lending
+        </LinkItem>
 
-            <LinkItem icon="/icons/entry-icon-staking.svg" href="/nft-staking" isCurrentRoutePath={pathname === '/nft-staking'}>
-              NFT Staking
-            </LinkItem>
-            <LinkItem icon="/icons/entry-icon-acceleraytor.svg" href="/bridge">
-              Bridge
-            </LinkItem> */}
+        <LinkItem icon="/icons/entry-icon-staking.svg" href="/nft-staking" isCurrentRoutePath={pathname === '/nft-staking'}>
+          NFT Staking
+        </LinkItem>
+        <LinkItem icon="/icons/entry-icon-acceleraytor.svg" href="/bridge">
+          Bridge
+        </LinkItem> */}
           </div>
 
           <Col className="overflow-scroll no-native-scrollbar">
@@ -666,29 +670,29 @@ function SideMenu({ className, onClickCloseBtn }: { className?: string; onClickC
                 Telegram
               </OptionItem>
               {/* <OptionItem noArrow href="https://discord.gg/GRweAYa3bC" iconSrc="/icons/media-discord.svg">
-                Discord
-              </OptionItem> */}
+            Discord
+          </OptionItem> */}
 
               {/* <OptionItem noArrow href="https://forms.gle/DvUS4YknduBgu2D7A" iconSrc="/icons/misc-feedback.svg">
-                Feedback
-              </OptionItem> */}
+            Feedback
+          </OptionItem> */}
             </div>
           </Col>
 
           {/* <Tooltip>
-            <div className="text-sm mobile:text-xs m-2 mb-0 leading-relaxed opacity-50 hover:opacity-100 transition font-medium text-[#abc4ff] whitespace-nowrap cursor-default">
-              <div>V {currentVersion.slice(1)}</div>
-              <div>
-                <BlockTimeClock />
-              </div>
-            </div>
-            <Tooltip.Panel>
-              <div className="text-xs m-2 leading-relaxed font-medium text-[#abc4ff] whitespace-nowrap cursor-default">
-                <div>Current: {currentVersion}</div>
-                <div>Latest: {latestVersion}</div>
-                <div>Block time: {<BlockTimeClock showSeconds />}</div>
-              </div>
-            </Tooltip.Panel>
+        <div className="text-sm mobile:text-xs m-2 mb-0 leading-relaxed opacity-50 hover:opacity-100 transition font-medium text-[#abc4ff] whitespace-nowrap cursor-default">
+          <div>V {currentVersion.slice(1)}</div>
+          <div>
+            <BlockTimeClock />
+          </div>
+        </div>
+        <Tooltip.Panel>
+          <div className="text-xs m-2 leading-relaxed font-medium text-[#abc4ff] whitespace-nowrap cursor-default">
+            <div>Current: {currentVersion}</div>
+            <div>Latest: {latestVersion}</div>
+            <div>Block time: {<BlockTimeClock showSeconds />}</div>
+          </div>
+        </Tooltip.Panel>
           </Tooltip> */}
         </Col>
       </Col>

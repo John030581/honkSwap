@@ -95,6 +95,7 @@ export async function swapQuote(_quoteResponse: any, _owner: PublicKey, _feeAcco
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        'Accept': 'application/json'
       },
       body: JSON.stringify(requestBody),
     })

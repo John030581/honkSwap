@@ -296,7 +296,7 @@ export default function CoinInputBox({
   return (
     <Row
       className={twMerge(
-        `relative flex-col bg-[#04133d] cursor-text rounded-xl py-3 px-6 mobile:px-4 ${disabled && !noDisableStyle ? 'pointer-events-none-entirely cursor-default opacity-50' : ''
+        `relative flex-col bg-[#5353db] cursor-text rounded-xl py-3 px-6 mobile:px-4 ${disabled && !noDisableStyle ? 'pointer-events-none-entirely cursor-default opacity-50' : ''
         }`,
         className
       )}
@@ -316,8 +316,8 @@ export default function CoinInputBox({
           {topLeftLabel}
         </div>
         <div
-          className={`text-xs mobile:text-2xs justify-self-end text-[rgba(171,196,255,.5)] ${disabledInput ? '' : 'clickable no-clicable-transform-effect clickable-filter-effect'
-            }`}
+          className={`text - xs mobile: text - 2xs justify - self - end text - [rgba(171, 196, 255, .5)] ${disabledInput ? '' : 'clickable no-clicable-transform-effect clickable-filter-effect'
+            } `}
           onClick={() => {
             if (disabledInput) return
             if (onCustomMax) {
@@ -328,7 +328,7 @@ export default function CoinInputBox({
             }
           }}
         >
-          {topRightLabel ?? `Balance: ${connected ? toString(maxValue) || '--' : '(Wallet not connected)'}`}
+          {topRightLabel ?? `Balance: ${connected ? toString(maxValue) || '--' : '(Wallet not connected)'} `}
         </div>
       </Row>
 
@@ -337,10 +337,10 @@ export default function CoinInputBox({
         {!hideTokenPart && (
           <>
             <Row
-              className={`items-center gap-1.5 ${(showTokenSelectIcon && !disabledTokenSelect) || canSwitchSOLWSOL
+              className={`items - center gap - 1.5 ${(showTokenSelectIcon && !disabledTokenSelect) || canSwitchSOLWSOL
                 ? 'clickable clickable-mask-offset-2'
                 : ''
-                }`}
+                } `}
               onClick={(ev) => {
                 ev.stopPropagation()
                 ev.preventDefault()
@@ -359,8 +359,8 @@ export default function CoinInputBox({
               {haveCoinIcon && token && <CoinAvatar token={token} size={isMobile ? 'smi' : 'md'} />}
               <Col className="items-start">
                 <div
-                  className={`text-[rgb(171,196,255)] max-w-[7em] ${token ? 'min-w-[2em]' : ''
-                    } overflow-hidden text-ellipsis font-medium text-base flex-grow mobile:text-sm whitespace-nowrap`}
+                  className={`text - [rgb(171, 196, 255)] max - w - [7em] ${token ? 'min-w-[2em]' : ''
+                    } overflow - hidden text - ellipsis font - medium text - base flex - grow mobile: text - sm whitespace - nowrap`}
                 >
                   {token?.symbol ?? '--'}
                 </div>
@@ -453,7 +453,7 @@ export default function CoinInputBox({
         {!hidePricePredictor && (
           <div
             className={`${!inputedAmount || inputedAmount === '0' ? 'invisible' : ''
-              } text-ellipsis overflow-hidden text-right`}
+              } text - ellipsis overflow - hidden text - right`}
           >
             {totalPrice ? toUsdVolume(totalPrice) : '--'}
           </div>
