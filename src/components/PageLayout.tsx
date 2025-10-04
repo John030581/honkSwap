@@ -445,7 +445,7 @@ function Navbar({
         />
       </Link>
       <Row className='w-full items-start justify-start ml-4'>
-        <LinkItem href="/swap" isCurrentRoutePath={pathname === '/swap'}>Swap</LinkItem>
+        <LinkItem href="/swap" isCurrentRoutePath={pathname === '/swap'}>Honkswap</LinkItem>
         {/* <LinkItem href="/farms" isCurrentRoutePath={pathname === '/farms'}>Farms</LinkItem>
         <LinkItem href="/lending" isCurrentRoutePath={pathname === '/lending'}>Lending</LinkItem>
         <LinkItem href="/nft-staking" isCurrentRoutePath={pathname === '/nft-staking'}>NFT Staking</LinkItem>
@@ -468,7 +468,9 @@ function Navbar({
       {barTitle ? (
         isString(barTitle) ? (
           <div onClick={onOpenMenu} className="text-lg font-semibold place-self-center text-white -mb-1">
-            {barTitle}
+            <Image className="cursor-pointer" src="/logo/logo.png" />
+            {/* {barTitle} */}
+            Honkswap
           </div>
         ) : (
           <MobileDropdownTitle
@@ -631,7 +633,7 @@ function SideMenu({ className, onClickCloseBtn }: { className?: string; onClickC
         <Col className="grid grid-rows-[2fr,1fr,auto] flex-1 overflow-hidden">
           <div className="shrink overflow-y-auto min-h-[120px] py-4 space-y-1 mobile:py-0 px-2 mr-2 mobile:ml-2 mb-2">
             <LinkItem icon="/icons/entry-icon-swap.svg" href="/swap" isCurrentRoutePath={pathname === '/swap'}>
-              Swap
+              Honkswap
             </LinkItem>
             {/* <LinkItem icon="/icons/entry-icon-farms.svg" href="/farms" isCurrentRoutePath={pathname === '/farms'}>
           Farms

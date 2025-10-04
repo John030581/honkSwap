@@ -356,7 +356,7 @@ export default function CoinInputBox({
                   : undefined
               }}
             >
-              {haveCoinIcon && token && <CoinAvatar token={token} size={isMobile ? 'smi' : 'md'} />}
+              {haveCoinIcon && token && <CoinAvatar token={token} size={isMobile ? 'lg' : '2xl'} />}
               <Col className="items-start">
                 <div
                   className={`text - [rgb(171, 196, 255)] max - w - [7em] ${token ? 'min-w-[2em]' : ''
