@@ -470,6 +470,7 @@ function Navbar({
           <div onClick={onOpenMenu} className="text-lg font-semibold place-self-center text-white -mb-1">
             <Image className="cursor-pointer" src="/logo/logo.png" />
             {/* {barTitle} */}
+
             Honkswap
           </div>
         ) : (
@@ -635,6 +636,18 @@ function SideMenu({ className, onClickCloseBtn }: { className?: string; onClickC
             <LinkItem icon="/icons/entry-icon-swap.svg" href="/swap" isCurrentRoutePath={pathname === '/swap'}>
               Honkswap
             </LinkItem>
+            <LinkItem icon="/icons/entry-icon-swap.svg" href="https://onlyhonk.fun/" isCurrentRoutePath={pathname === '/swap'}>
+              Honk Launchpad
+            </LinkItem>
+            <LinkItem icon="/icons/entry-icon-swap.svg" href="https://honkbridge.io/" isCurrentRoutePath={pathname === '/swap'}>
+              Honk bridge
+            </LinkItem>
+            <LinkItem icon="/icons/entry-icon-swap.svg" href="https://www.honkcto.com/" isCurrentRoutePath={pathname === '/swap'}>
+              Honk Info
+            </LinkItem>
+            <LinkItem icon="/icons/entry-icon-swap.svg" href="https://apps.apple.com/app/id6745328711" isCurrentRoutePath={pathname === '/swap'}>
+              Honk Tracker
+            </LinkItem>
             {/* <LinkItem icon="/icons/entry-icon-farms.svg" href="/farms" isCurrentRoutePath={pathname === '/farms'}>
           Farms
         </LinkItem>
@@ -661,7 +674,7 @@ function SideMenu({ className, onClickCloseBtn }: { className?: string; onClickC
               {/* <SettingSidebarWidget /> */}
               {/* <CommunityPanelSidebarWidget /> */}
 
-              <OptionItem noArrow href="#" iconSrc="/icons/msic-docs.svg">
+              <OptionItem noArrow href="https://dev.jup.ag/docs/swap-api/" iconSrc="/icons/msic-docs.svg">
                 Docs
               </OptionItem>
 
